@@ -9,11 +9,20 @@
 <body>
     <div class="container">
         <h2>Welcome To Our Shoe Store</h2>
-        <input type="text" id="search-input" placeholder="Search shoes...">
+        <div class="start">
+            <input type="text" id="search-input" placeholder="Search shoes...">
+
+            <button onclick="openCart()">Cart</button>
+        </div>
+
+        <div id="notification" style="display: none;">
+        </div>
 
         <div id="shoe-container"></div>
 
-        <div id="cart-container">
+        <div class="overlay"></div>
+        <div id="cart-container" class="cart-container" style="display: none;">
+            <span class="closeBtn">&times;</span>
             <h3>Shopping Cart</h3>
             <div id="cart-items"></div>
             <p id="cart-total">Total: $0.00</p>
@@ -30,6 +39,17 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function openCart() {
+            document.querySelector('.cart-container').style.display = 'block';
+            document.querySelector('.overlay').style.display = 'block';
+        }
+        document.querySelector('.closeBtn').addEventListener('click', function() {
+            document.querySelector('.cart-container').style.display = 'none';
+            document.querySelector('.overlay').style.display = 'none';
+        });
+    </script>
     <script src="js.js"></script>
 </body>
 </html>

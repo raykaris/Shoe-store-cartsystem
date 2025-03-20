@@ -1,4 +1,4 @@
-// Shoe "database" as a JavaScript array of objects
+// "database" 
 const shoeDatabase = [
     {
         id: 1,
@@ -66,7 +66,7 @@ const shoeDatabase = [
     }
 ];
 
-// Function to display shoes on the page
+// Function for displaying shoes
 function displayShoes(shoes) {
     const container = document.getElementById('shoe-container');
     container.innerHTML = '';
@@ -100,17 +100,18 @@ function filterByCategory(category) {
     }
 }
 
-// Function to search shoes by name
+// Function to search shoes by category or name
 function searchShoes(searchTerm) {
     const filteredShoes = shoeDatabase.filter(shoe => 
         shoe.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        shoe.description.toLowerCase().includes(searchTerm.toLowerCase())
+        shoe.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
     displayShoes(filteredShoes);
 }
 
 
-// Simple add to cart function (placeholder)
+
+// shopping cart code
 class ShoppingCart {
     constructor() {
         this.items = [];
@@ -119,7 +120,15 @@ class ShoppingCart {
     addItem(shoeId, quantity = 1) {
         const shoe = shoeDatabase.find(s => s.id === shoeId);
         const existingItem = this.items.find(item => item.shoe.id === shoeId);
-        
+
+        // notification message
+        const notification = document.getElementById('notification');
+        notification.textContent = `${shoe.name} has been added to the cart.`;
+        notification.style.display = 'block';
+        setTimeout(() => {
+            notification.style.display = 'none';
+        }, 3000); 
+
         if (existingItem) {
             existingItem.quantity += quantity;
         } else {
@@ -180,7 +189,7 @@ class ShoppingCart {
     }
 }
 
-// Initialize cart
+// Initializing cart
 const cart = new ShoppingCart();
 
 // Checkout function
@@ -188,6 +197,7 @@ function showCheckout() {
     const checkoutModal = document.getElementById('checkout-modal');
     const checkoutItems = document.getElementById('checkout-items');
     const checkoutTotal = document.getElementById('checkout-total');
+    const closeCart = document.getElementById('cart-container');
     
     checkoutItems.innerHTML = '';
     cart.items.forEach(item => {
@@ -202,29 +212,31 @@ function showCheckout() {
 
     checkoutTotal.textContent = `Total: $${cart.getTotal().toFixed(2)}`;
     checkoutModal.style.display = 'block';
+    closeCart.style.display = 'none';
 }
 
 function completePurchase() {
     alert(`Thank you for your purchase! Total amount: $${cart.getTotal().toFixed(2)}`);
     cart.clearCart();
     document.getElementById('checkout-modal').style.display = 'none';
+    location.reload(); 
 };
 
 
 // Initialize page when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    // Display all shoes initially
     displayShoes(shoeDatabase);
     
-    // Add event listener for search
+    // search event listener
     const searchInput = document.getElementById('search-input');
     if (searchInput) {
         searchInput.addEventListener('input', (e) => {
             searchShoes(e.target.value);
         });
     }
-    // Close checkout modal
+    // Close checkout
     document.getElementById('close-checkout').addEventListener('click', () => {
         document.getElementById('checkout-modal').style.display = 'none';
+        location.reload();
     });
 });

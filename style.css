@@ -4,11 +4,35 @@
 
 h2{
     text-align: center;
-    color: #fffcdc;
+    color: #00272b;
+    font-size: 2.5rem;
 }
 
 body{
     background: linear-gradient(to right, #34e89e, #0f3443);
+}
+
+#notification{
+    position: fixed; 
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -10%); 
+    width: 50%; 
+    background: transparent;
+    backdrop-filter: blur(5px);
+    border: 1px solid #a31621;
+    border-radius: 5px;
+    color: #a31621; 
+    text-align: center; 
+    padding: 10px; 
+    z-index: 1000;
+}
+
+.start{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6rem;
 }
 
 #shoe-container {
@@ -38,13 +62,13 @@ body{
 }
 
 .price {
-    color: green;
+    color: #352208;
     font-weight: bold;
 }
 
 .category {
-    color: #666;
-    font-size: 0.9em;
+    color: #5b2333;
+    font-size: 1em;
 }
 
 button {
@@ -70,14 +94,44 @@ button:hover {
 
 #cart-container {
     position: fixed;
-    right: 20px;
-    top: 20px;
+    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 300px;
+    color: #f7f4f3;
     border: 1px solid #ddd;
     border-radius: 10px;
     padding: 10px;
     background: transparent;
     backdrop-filter: blur(5px);
+    z-index: 1000;
+    overflow-y: auto;
+    max-height: 80%;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 999;
+    display: none;
+}
+
+.closeBtn{
+    color: #a31621;
+    float: right;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.closeBtn:hover,
+.closeBtn:focus{
+    cursor: pointer;
+    color: #f87060;
 }
 
 .cart-item {
@@ -103,9 +157,13 @@ button:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: white;
+    background: transparent;
+    backdrop-filter: blur(5px);
+    color: #f7f4f3;
     padding: 20px;
     border: 1px solid #ddd;
+    border-radius: 10px;
+    z-index: 1000;
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
