@@ -4,33 +4,65 @@ const shoeDatabase = [
         id: 1,
         name: "Running Pro X1",
         price: 99.99,
-        imageUrl: "https://example.com/images/shoes/running-pro-x1.jpg",
-        category: "Running",
+        imageUrl: "products/sneaker-1.jpeg",
+        category: "Sneakers",
         description: "Lightweight running shoes with extra cushioning"
     },
     {
         id: 2,
         name: "Casual Walker",
         price: 79.50,
-        imageUrl: "https://example.com/images/shoes/casual-walker.jpg",
+        imageUrl: "products/casual-blue.jpeg",
         category: "Casual",
         description: "Comfortable everyday walking shoes"
     },
     {
         id: 3,
-        name: "Basketball Elite",
+        name: "Air Jordan 11",
         price: 129.99,
-        imageUrl: "https://example.com/images/shoes/basketball-elite.jpg",
-        category: "Sports",
+        imageUrl: "products/J-11.jpeg",
+        category: "Sneakers",
         description: "High-performance basketball shoes"
     },
     {
         id: 4,
-        name: "Hiking Extreme",
+        name: "Ladies casual",
         price: 149.99,
-        imageUrl: "https://example.com/images/shoes/hiking-extreme.jpg",
-        category: "outdoor",
+        imageUrl: "products/casual-ladies-1.jpeg",
+        category: "casual",
         description: "Durable hiking boots for extreme conditions"
+    },
+    {
+        id: 5,
+        name: "Air-Force 1",
+        price: 60.00,
+        imageUrl: "products/Airforce1-white.jpeg",
+        category: "Sneakers",
+        description: "Classic white sneakers for everyday wear",
+    },
+    {
+        id: 6,
+        name: "Converse All-Star",
+        price: 100.00,
+        imageUrl: "products/converse-1.jpeg",
+        category: "Sneakers",
+        description: "Iconic canvas sneakers for casual wear",
+    },
+    {
+        id: 7,
+        name: "Sb-Dunk",
+        price: 110.99,
+        imageUrl: "products/sb-lowcut.jpeg",
+        category: "sneakers",
+        description: "Skateboarding shoes with extra grip",
+    },
+    {
+        id: 8,
+        name: "Casual Men",
+        price: 86.99,
+        imageUrl: "products/casual-brown.jpeg",
+        category: "Casual",
+        description: "Stylish brown",
     }
 ];
 

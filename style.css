@@ -1,9 +1,24 @@
+*{
+    box-sizing: border-box;
+}
+
+h2{
+    text-align: center;
+    color: #fffcdc;
+}
+
+body{
+    background: linear-gradient(to right, #34e89e, #0f3443);
+}
 
 #shoe-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
     padding: 20px;
+}
+#shoe-container:hover{
+    cursor: pointer;
 }
 
 .shoe-card {
@@ -15,7 +30,7 @@
 .shoe-image {
     width: 100%;
     height: 200px;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .shoe-details {
@@ -33,7 +48,7 @@
 }
 
 button {
-    background-color: #007bff;
+    background-color: #b24c63;
     color: white;
     border: none;
     padding: 8px 16px;
@@ -42,14 +57,15 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #233d4d;
 }
 
 #search-input {
-    width: 80%;
+    width: 20rem;
     padding: 10px;
     margin: 20px 0;
-    box-sizing: border-box;
+    border: 1px solid #e0ff4f;
+    border-radius: 5px;
 }
 
 #cart-container {
@@ -58,8 +74,10 @@ button:hover {
     top: 20px;
     width: 300px;
     border: 1px solid #ddd;
+    border-radius: 10px;
     padding: 10px;
-    background: white;
+    background: transparent;
+    backdrop-filter: blur(5px);
 }
 
 .cart-item {
